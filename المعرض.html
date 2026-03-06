@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>معرض الصور - فندق الأليفة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* إضافة بعض التنسيقات السريعة للتأكد من المرونة */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* جعل الشبكة مرنة */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #f9f9f9; /* خلفية خفيفة للصور غير المتناسقة */
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: auto; /* يجعل الارتفاع متناسباً مع العرض لمنع القص */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* لضمان أن الصورة لا يتم قصها أبداً */
+        .full-view-img {
+            object-fit: contain !important; 
+            max-height: 500px; /* يمكنك زيادة هذا الرقم لتكبير الصور */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="لوغو.jpg" alt="لوفينغ هومز"></div>
+        <nav>
+            <ul>
+                <li><a href="الرئيسية.html">الرئيسية</a></li>
+                <li><a href="المرافق.html">المرافق</a></li>
+                <li><a href="الحزم و الاسعار.html">الحزم</a></li>
+                <li><a href="الانشطة و الترفيه.html">الأنشطة</a></li>
+                <li><a href="تواصل معنا.html">احجز الآن</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>معرض اللحظات السعيدة </h1>
+        <p>شاهد ضيوفنا وهم يستمتعون بإقامتهم الملكية في فندقنا.</p>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-card">
+                <img src="download.webp" alt="كلب سعيد" class="full-view-img">
+                <div class="gallery-overlay">لعب امن للكلاب الصغيرة</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="OIP (11).webp" alt="كلب مسترخي" class="full-view-img">
+                <div class="gallery-overlay">استراحة بعد السباحة</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="OIP (12).webp" alt="كلب يلعب" class="full-view-img">
+                <div class="gallery-overlay">صداقات جديدة</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="OIP (5).webp" alt="كلب في الغرفة" class="full-view-img">
+                <div class="gallery-overlay">إقامة ملكية</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="Dog-Playing-With-Toys.webp" alt="كلب في الحديقة" class="full-view-img">
+                <div class="gallery-overlay">ركض وحرية</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="OIP copy.webp" alt="كلب مع مدرب" class="full-view-img">
+                <div class="gallery-overlay">تدريب واهتمام</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="OIP (4).webp" alt="كلب مع العابه" class="full-view-img">
+                <div class="gallery-overlay">سعادة واسترخاء</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="zoom-controls">
+        <button class="zoom-btn" onclick="adjustZoom(1)" title="تكبير">+</button>
+        <button class="zoom-btn" onclick="adjustZoom(-1)" title="تصغير">-</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
